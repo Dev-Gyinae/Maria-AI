@@ -3,6 +3,8 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 import { Configuration, OpenAIApi } from "openai";
 
+// settings made for securing API keys and environmental variables
+
 dotenv.config();
 
 const configuration = new Configuration({
@@ -14,6 +16,8 @@ const openai = new OpenAIApi(configuration);
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// TO display a message showing the status of Backend Server.
 
 app.get("/", async (req, res) => {
   res.status(200).send({
@@ -43,6 +47,8 @@ app.post("/", async (req, res) => {
     res.status(500).send(error || "Too many requests. Try again later");
   }
 });
+
+// Local host server for development and testing.
 
 app.listen(5000, () =>
   console.log("AI server started on http://localhost:5000")

@@ -4,6 +4,8 @@ import user from "./assets/user.svg";
 const form = document.querySelector("form");
 const chatContainer = document.querySelector("#chat_container");
 
+
+//  Displays the thinking motion by dots whiles the API fetches the data.
 let loadInterval;
 
 function loader(element) {
@@ -31,6 +33,7 @@ function typeText(element, text) {
   }, 20);
 }
 
+// Generates a unique id to track the queries made or chat records/order.
 function generateUniqueId() {
   const timestamp = Date.now();
   const randomNumber = Math.random();
@@ -74,6 +77,7 @@ const handleSubmit = async (e) => {
   const messageDiv = document.getElementById(uniqueId);
 
   loader(messageDiv);
+
   // fetch response from server. Bot's response
   const response = await fetch("https://mariaai.onrender.com", {
     method: "POST",
@@ -84,6 +88,8 @@ const handleSubmit = async (e) => {
       prompt: data.get("prompt"),
     }),
   });
+
+// Clears the loading dots and refreshes the intervals.
 
   clearInterval(loadInterval);
   messageDiv.innerHTML = "";
