@@ -29,3 +29,11 @@ so with the new updates to the web browsers a few adjustments maybe needed in th
 'scrollbar-width' is not supported by Chrome, Chrome Android, Edge, Opera, Safari, Safari on iOS, Samsung Internet.
 
 *** this error affects the scrolling function of the app in some browsers. 
+
+
+
+### Updates ###
+15/05/2023 (Monday)
+
+updates of comments in codes 
+modifying environmental variables.
